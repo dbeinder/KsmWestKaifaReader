@@ -215,10 +215,10 @@ if __name__ == '__main__':
             hour = timestamp[5]
             minute = timestamp[6]
             second = timestamp[7]
-            millisec = timestamp[8]
+            centisec = timestamp[8]
             offset_min = int.from_bytes(timestamp[9:11], "big", signed=True)
             timezone = datetime.timezone(datetime.timedelta(minutes=-offset_min))
-            dtobj = datetime.datetime(year, month, day, hour, minute, second, millisec*1000, tzinfo=timezone)
+            dtobj = datetime.datetime(year, month, day, hour, minute, second, centisec*10000, tzinfo=timezone)
             milli_ts = int(dtobj.timestamp() * 1000)
             #print(dtobj)
             
