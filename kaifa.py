@@ -142,7 +142,10 @@ if __name__ == '__main__':
             system_title = app_message[2:10]
             length = app_message[10]
             pos = 11
-            if length == 0x82:
+            if length == 0x81:
+                length = app_message[11]
+                pos = 12
+            elif length == 0x82:
                 length = (app_message[11] << 8) + app_message[12]
                 pos = 13
 
