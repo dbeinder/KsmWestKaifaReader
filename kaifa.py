@@ -71,7 +71,7 @@ if __name__ == '__main__':
             break
 
         if frame_start[0] != 0x68:
-            print(f"invalid MBUS frame start, byte: 0x{frame_start:x}")
+            print(f"invalid MBUS frame start, byte: 0x{frame_start[0]:x}")
             continue
 
         header = serial.read(3)
